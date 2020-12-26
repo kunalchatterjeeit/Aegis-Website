@@ -1,0 +1,177 @@
+﻿@model AegisWebsite.Models.ContactModel
+
+@{
+    ViewBag.Title = "Headquarter Office Address: Aegis Solutions, Kolkata, West Bengal, India| Branch Office Address: Aegis Services, Bally, Howrah, Kolkata, West Bengal, India| MSME Registered Organization| Office Imaging Solution| Managed Service| Copier, Printer on rent solutions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Page title -->
+<div class="page-title parallax-style parallax1">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-title-heading">
+                    @*<h2>Contact us</h2>*@
+                </div>
+                <!-- /.page-title-heading -->
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.page-title -->
+
+<div class="page-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="flat-wrapper">
+                <div class="breadcrumbs">
+                    <h2 class="trail-browse">You are here:</h2>
+                    <ul class="trail-items">
+                        <li class="trail-item"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li>Contact us</li>
+                    </ul>
+                </div>
+                <!-- /.breadcrumbs -->
+            </div>
+            <!-- /.flat-wrapper -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.page-breadcrumbs -->
+
+<div class="flat-row">
+    <div class="container">
+        <div class="row">
+            @if (TempData["Message"] != null)
+            {
+                if (!TempData["Message"].ToString().Contains("can't"))
+                {
+                    <span id="spanSuccess" runat="server" style="line-height: 30px; border: 1px solid #72E837; float: left; background: #CEF7B9; font-size: 10pt; padding: 5px 2px 5px 30px; color: #58BC21; width: 100%; position: relative; margin: 0px 30px 20px 0px">
+                        <span style="margin: 0px 10px">@TempData["Message"].ToString()</span>
+                    </span>
+                }
+                else
+                {
+                    <p>
+                        <span id="spanError" runat="server" style="line-height: 30px; border: 1px solid #FF0602; float: left; background: #FFB793; font-size: 10pt; padding: 5px 2px 5px 30px; color: #ED1410; width: 100%; position: relative; margin: 0px 30px 20px 0px">
+                            <span style="margin: 0px 15px">@TempData["Message"].ToString()</span>
+                        </span>
+                    </p>
+                }
+
+            }
+            <div class="col-md-4">
+                <h5 class="scheme">Headquarter Address</h5>
+                <p>
+                    <strong>Aegis Solutions</strong><br>
+                    357/2B, Prince Anwar Shah Road<br>
+                    West Bengal, India<br />
+                    Tel: +91 8335810009
+                    <br>
+                    Email: <a class="scheme" href="mailto:info@aegissolutions.in">info@aegissolutions.in</a>
+                </p>
+            </div>
+            <!-- /.col-md-6 -->
+            <div class="col-md-8">
+                <div id="flat-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.8013269608678!2d88.35757932042512!3d22.500205035098347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1af7a4391da1a9e1!2sAegis+Solutions!5e0!3m2!1sen!2sin!4v1557679467665!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <br />
+            <div class="col-md-4">
+                <h5 class="scheme">Branch Office Address</h5>
+                <p>
+                    <strong>Aegis Services</strong><br>
+                    179, B.C.Road, Khosbagan<br>
+                    Bravery Marketing Complex, Burdwan<br />
+                    West Bengal, India<br />
+                    PIN - 713103<br />
+                    Tel: +91 9831111181<br />
+                    Email: <a class="scheme" href="mailto:sales@aegisservices.in">sales@aegisservices.in</a>
+                </p>
+            </div>
+            <div class="col-md-8">
+                <div id="flat-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.090650328016!2d87.85427787820113!3d23.239788126810808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f849d8f53b2831%3A0xe7d332b9e732b08a!2s179%2C%20BC%20Rd%2C%20Khosbagan%2C%20Bardhaman%2C%20West%20Bengal%20713103!5e0!3m2!1sen!2sin!4v1567827433101!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.flat-row -->
+
+<div class="flat-row">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="flat-contact-us">
+                    <h4 class="flat-title-section style mag-top0px">Opening <span>hours</span></h4>
+                    <p>Find out opening hours and information for Aegis Solutions. Thank you !</p>
+                </div>
+                <div class="flat-divider d20px"></div>
+                <ul class="iconlist">
+                    <li><i class="fa fa-clock-o"></i><strong>Monday:</strong> 09:30 a.m – 07:00 p.m</li>
+                    <li><i class="fa fa-clock-o"></i><strong>Tuesday:</strong> 09:30 a.m – 07:00 p.m</li>
+                    <li><i class="fa fa-clock-o"></i><strong>Wednesday:</strong> 09:30 a.m – 07:00 p.m</li>
+                    <li><i class="fa fa-clock-o"></i><strong>Thursday:</strong> 09:30 a.m – 07:00 p.m</li>
+                    <li><i class="fa fa-clock-o"></i><strong>Friday:</strong> 09:30 a.m – 07:00 p.m</li>
+                    <li><i class="fa fa-clock-o"></i><strong>Saturday:</strong> 09:30 a.m – 07:00 p.m</li>
+                    <li><i class="fa fa-clock-o"></i><strong>Sunday:</strong> Closed</li>
+                </ul>
+
+                <div class="flat-divider d20px"></div>
+            </div>
+            <!-- /.col-md-4 -->
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="col-md-8">
+                    <p>Please fill out the following form and a representative will contact you.</p>
+                    <div class="flat-divider d10px"></div>
+                    <form id="contactform" method="post" action="#">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>
+                                    @Html.TextBoxFor(m => m.Name, new { id = "name", placeholder = "Name" })
+                                </p>
+
+                                <p>
+                                    @Html.TextBoxFor(m => m.Email, new { id = "email", placeholder = "Email" })
+                                </p>
+
+                                <p>
+                                    @Html.TextBoxFor(m => m.Phone, new { id = "phone", placeholder = "Phone Number" })
+                                </p>
+                            </div>
+                            <!-- /.col-md-6 -->
+
+                            <div class="col-md-6">
+                                <p>
+                                    @Html.TextAreaFor(m => m.Comment, new { placeholder = "Comment" })
+                                </p>
+                                <span class="form-submit">
+                                    <input name="submit" type="submit" id="submit" class="submit" value="Sent Mail">
+                                </span>
+                            </div>
+                            <!-- /.col-md-6 -->
+                        </div>
+                        <!-- /.row -->
+                    </form>
+                </div>
+            }
+            <!-- /.col-md-8 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.flat-row -->

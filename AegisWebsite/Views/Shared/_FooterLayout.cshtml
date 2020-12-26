@@ -1,0 +1,94 @@
+﻿<footer class="footer">
+    <div class="footer-widgets">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="widget widget_nav_menu">
+                        <h3 class="widget-title">Quick links</h3>
+                        <div class="menu-footer-menu-container">
+                            <ul class="menu-footer-menu">
+                                <li><a href="@Url.Action("index", "Home")">Home</a></li>
+                                <li><a href="@Url.Action("Index", "ProductType")">Product</a></li>
+                                <li><a href="@Url.Action("about-us", "Home")">About us</a></li>
+                                <li><a href="@Url.Action("certificates", "Home")">Certificates</a></li>
+                                <li><a href="@Url.Action("document-managment-solutions-with-workflow", "Home")">DMS with workflow</a></li>
+                                <li><a href="@Url.Action("scanning-and-digitization-services", "Home")">Scanning & Digitization services</a></li>
+                                <li><a href="@Url.Action("manage-print-solutions", "Home")">Manage Print solutions</a></li>
+                                <li><a href="@Url.Action("support-or-service", "Home")">Request Service Call</a></li>
+                                <li><a href="@Url.Action("support-or-service", "Home")">Need Support</a></li>
+                                <li><a href="@Url.Action("contact-us", "Home")">Contact us</a></li>
+                                <li><a href="@Url.Action("privacy-policy", "Home")">Privacy Policy</a></li>
+                                @{
+                                    string crmLink = Html.Encode(string.Concat("http://crm.aegissolutions.in", "?id=", DateTime.UtcNow.AddHours(8).Ticks));
+                                    <li><a href=@crmLink>CRM Log-in</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-md-3 -->
+
+                <div class="col-md-6">
+                    <div class="widget widget_text information">
+                        <h3 class="widget-title">Contact Us</h3>
+                        <div class="textwidget">
+                            <p>
+                                <strong>
+                                    357/2B,
+                                    Prince Anwar Shah Road<br />
+                                    Kolkata, West Bengal, India <br />
+                                    PIN-700068
+                                </strong>
+                            </p>
+                            <p>
+                                <i class="fa fa-phone"></i><a href="tel:+91-9831111181">+91-9831111181</a><br>
+                                <i class="fa fa-envelope"></i><a href="mailto:sales@aegissolutions.in">sales@aegissolutions.in</a>
+                            </p>
+                            <p>
+                                <i class="fa fa-phone"></i><a href="tel:+91-8335810009">+91-8335810009</a><br>
+                                <i class="fa fa-envelope"></i><a href="mailto:support@aegissolutions.in">support@aegissolutions.in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-md-3 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.footer-content -->
+
+    <div class="footer-content">
+        <div class="container">
+            <div class="row">
+                <div class="flat-wrapper">
+                    <div class="ft-wrap clearfix">
+                        <div class="social-links">
+                            <a href="https://twitter.com/AegisKolkata"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/aegissolutions.in"><i class="fa fa-facebook-official"></i></a>
+                            @*<a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>*@
+                        </div>
+                        <div class="copyright">
+                            <div class="copyright-content">
+                                Copyright © reserved by <a href="#">Aegis Solutions.</a>
+                            </div>
+                        </div>
+                        <div class="copyright">
+                            <script language="JavaScript" type="text/javascript">
+                                TrustLogo("https://aegissolutions.in/Contents/images/sectigo_trust_seal_sm_82x32.png", "CL1", "none");
+                            </script>
+                            &nbsp;<a href="https://ssl.comodo.com" id="comodoTL">Comodo SSL</a>
+                        </div>
+                    </div>
+                    <!-- /.ft-wrap -->
+                </div>
+                <!-- /.flat-wrapper -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.footer-content -->
+</footer>

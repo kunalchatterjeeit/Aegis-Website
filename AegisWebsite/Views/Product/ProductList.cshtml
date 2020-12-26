@@ -1,0 +1,46 @@
+﻿@model List<Aegis.Model.Product>
+<ul class="properties_list">
+    @if (Model != null && Model.Count > 0)
+    {
+        foreach (Aegis.Model.Product product in Model)
+        {
+            <li>
+                <a href='@Url.Action("Details", new { id = product.SeoUrl })'>
+                    @if (product.ProductDisplays.Any() && product.ProductDisplays.Count > 0)
+                    {
+                        <img src='@product.ProductDisplays.FirstOrDefault().ContentPath' alt='@product.ProductDisplays.FirstOrDefault().Name' title="" class="property_img" />
+                    }
+                    else
+                    {
+                        <img src='~/Contents/images/no-image-available.png' alt='no-image' title="" class="property_img" />
+                    }
+                    @*<span class="price">$2500</span>*@
+                    <div class="property_details">
+                        <h1>
+                            <a href='@Url.Action("Details", new { id = product.SeoUrl })'>@product.Name</a>
+                        </h1>
+                        @if (product.ProductFeatures.Any() && product.ProductFeatures.Count > 0)
+                        {
+                            <h2>@product.ProductFeatures.FirstOrDefault().Description</h2>
+                        }
+
+                    </div>
+
+                </a>
+
+
+            </li>
+        }
+    }
+    else
+    {
+        <h4>Product information yet to update.</h4>
+        <h5>Please <a href="/contact-us" style="color:#BF0000">contact us</a> for more information on products.</h5>
+        <h7>Click <a href="@Url.Action("all-canon-products", "Home")" style="color:#BF0000">here</a> to go back</h7>
+        <br />
+
+        <h4>Product Suggestions:</h4>
+        Html.RenderAction("ProductSuggestion", "Product");
+    }
+
+</ul>

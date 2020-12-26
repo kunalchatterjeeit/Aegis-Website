@@ -1,0 +1,111 @@
+﻿@{
+    Layout = null;
+}
+@using System.Web.Optimization
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <meta name="msvalidate.01" content="17939D29780C72DCA1609FB6171EEFFB" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>@ViewBag.Title</title>
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="~/Contents/stylesheets/style.css">
+
+    @Styles.Render("~/bundles/css")
+
+    <link rel="stylesheet" type="text/css" href="~/Contents/stylesheets/responsive-product.css">
+
+    <!-- Favicon and touch icons  -->
+    <link href="~/Contents/icon/aegis-solutions-icon-48x48.png" rel="apple-touch-icon-precomposed" sizes="48x48">
+    <link href="~/Contents/icon/aegis-solutions-icon-32x32.png" rel="apple-touch-icon-precomposed">
+    <link href="~/Contents/icon/aegis-solutions-icon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <script type="text/javascript">
+        //<![CDATA[
+        var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+        document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+        //]]>
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50793564-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-50793564-2');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NVTSLHQ');</script>
+    <!-- End Google Tag Manager -->
+
+</head>
+<body class="header-sticky page-loading">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVTSLHQ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Boxed -->
+    <div class="boxed">
+
+        <div class="main-nav">
+            <ul class="nav">
+                <li><a href="@Url.Action("all-canon-products", "Home")">PRODUCT</a></li>
+                <li><a href="@Url.Action("index", "Home")">SOLUTION</a></li>
+            </ul>
+        </div>
+        <div id='cssmenu' class="mobile-menu">
+            <ul>
+                <li class='active'><a href="@Url.Action("all-canon-products", "Home")"><span>PRODUCT</span></a></li>
+                <li class='last'><a href="@Url.Action("index", "Home")"><span>SOLUTION</span></a></li>
+            </ul>
+        </div>
+        @Html.Partial("_HeaderLayout")
+        <!-- /.site-header -->
+
+        @RenderBody()
+
+        <!-- Footer -->
+        @Html.Partial("_FooterLayout")
+
+        <!-- Go Top -->
+        <a class="go-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+
+    </div>
+    <script type="text/javascript" src="~/Contents/javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+        $(document).ready(function () {
+            var modal = $("#my-modal").wgModal({
+                triggerElement: '#open-modal',
+            });
+            modal.openModal();
+            $('#my-modal .close').click(function () {
+                modal.closeModal();
+            });
+        });
+
+    </script>
+</body>
+</html>

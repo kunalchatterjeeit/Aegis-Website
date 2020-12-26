@@ -1,0 +1,267 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+
+#cssmenu {
+    line-height: 18px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+    #cssmenu > ul {
+        width: auto;
+        list-style-type: none;
+        text-align:center;
+        margin: 0;
+        background: #000000;
+        border: 1px solid #ece6e8;
+        border-bottom: 3px solid #FCB32A;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -o-border-radius: 2px;
+        border-radius: 2px;
+    }
+
+        #cssmenu > ul li#responsive-tab {
+            display: none;
+            /* Hide for large screens */
+        }
+
+        #cssmenu > ul li {
+            display: inline-block;
+            *display: inline;
+            zoom: 1;
+            /*margin: 0 auto 0 25%*/
+        }
+
+            #cssmenu > ul li.right {
+                float: right;
+            }
+
+            #cssmenu > ul li.has-sub {
+                position: relative;
+            }
+
+                #cssmenu > ul li.has-sub:hover ul {
+                    display: block;
+                }
+
+                #cssmenu > ul li.has-sub ul {
+                    display: none;
+                    width: 250px;
+                    position: absolute;
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    background: #21242B;
+                    border: 1px solid #ece6e8;
+                    border-bottom: 3px solid #FCB32A;
+                    border-top: 0 none;
+                }
+
+                    #cssmenu > ul li.has-sub ul li {
+                        display: block;
+                    }
+
+                #cssmenu > ul li.has-sub > a {
+                    background-image: url('images/caret.png');
+                    background-repeat: no-repeat;
+                    background-position: 90% -95%;
+                }
+
+                    #cssmenu > ul li.has-sub > a.active,
+                    #cssmenu > ul li.has-sub > a:hover {
+                        background-position: 90% 195%;
+                        background-color: #F70404 !important;
+                    }
+
+            #cssmenu > ul li a {
+                display: block;
+                padding: 12px 24px 11px 24px;
+                text-decoration: none;
+                color: #fff;
+            }
+
+                #cssmenu > ul li a.active,
+                #cssmenu > ul li a:hover {
+                    background: #F70404;
+                }
+        /* Make sure they show even if hidden in mobile view by JS */
+
+        #cssmenu > ul > li.collapsed {
+            display: inline-block !important;
+            *display: inline;
+            zoom: 1;
+        }
+
+        #cssmenu > ul ul li.collapsed {
+            display: block !important;
+        }
+
+
+
+@media (min-width:800px) {
+    .main-nav {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+    .main-nav {
+        width: 100vh;
+        height: 45px;
+        position: fixed;
+        background: #21242B;
+        -webkit-transform-origin: left top;
+        -webkit-transform: rotate(-90deg) translateX(-100%);
+        z-index: 1000;
+        box-shadow: 0 2px #FCB32A;
+    }
+
+    ul.nav {
+        margin: auto;
+        height: 100%;
+        padding-right: 25%;
+    }
+
+        ul.nav li {
+            margin-right: 20px;
+            float: right;
+            height: 100%;
+            line-height: 45px;
+        }
+
+            ul.nav li a {
+                color: #fff;
+                display: unset !important;
+            }
+
+                ul.nav li a:hover {
+                    background-color: #F70404 !important;
+                }
+}
+
+@media (max-width:800px) {
+    .main-nav {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
+
+.category-menu {
+    float: right;
+    width: 100%;
+    margin:10px;
+}
+
+    .category-menu ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+ul.dropdown {
+    position: relative;
+}
+@media (max-width:800px) {
+    ul.dropdown li {
+        font-weight: bold;
+        float: left;
+        width: 100%;
+        position: relative;
+        background: #ecf0f1;
+    }
+}
+@media (min-width:801px) {
+    ul.dropdown li {
+        font-weight: bold;
+        float: left;
+        width: 180px;
+        position: relative;
+        background: #ecf0f1;
+    }
+}
+
+    ul.dropdown a:hover {
+        color: #000;
+    }
+
+    ul.dropdown li a {
+        display: block;
+        padding: 20px 8px;
+        color: #34495e;
+        position: relative;
+        z-index: 2000;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 300;
+    }
+
+        ul.dropdown li a:hover,
+        ul.dropdown li a.hover {
+            background: #3498db;
+            position: relative;
+            color: #fff;
+        }
+
+
+    ul.dropdown ul {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+        ul.dropdown ul li {
+            font-weight: normal;
+            background: #f6f6f6;
+            color: #000;
+            border-bottom: 1px solid #ccc;
+        }
+
+            ul.dropdown ul li a {
+                display: block;
+                color: #34495e !important;
+                background: #eee !important;
+            }
+
+                ul.dropdown ul li a:hover {
+                    display: block;
+                    background: #3498db !important;
+                    color: #fff !important;
+                }
+
+                ul.dropdown .active {
+                    display: block;
+                    background: #3498db !important;
+                    color: #fff !important;
+                }
+
+    .drop > a {
+        position: relative;
+    }
+
+        .drop > a:after {
+            content: "";
+            position: absolute;
+            right: 10px;
+            top: 40%;
+            border-left: 5px solid transparent;
+            border-top: 5px solid #333;
+            border-right: 5px solid transparent;
+            z-index: 999;
+        }
+
+        .drop > a:hover:after {
+            content: "";
+            border-left: 5px solid transparent;
+            border-top: 5px solid #fff;
+            border-right: 5px solid transparent;
+        }
+
+

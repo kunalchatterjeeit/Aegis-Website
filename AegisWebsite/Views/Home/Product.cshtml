@@ -1,0 +1,13 @@
+﻿@model string
+
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="listings">
+    <div class="wrapper">
+        @{Html.RenderAction("ProductCategoryList");}
+        @{Html.RenderAction("ProductList", new { id = Model });}
+    </div>
+</section>	<!--  end listing section  -->

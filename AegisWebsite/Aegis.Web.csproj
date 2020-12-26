@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8324415-3F05-4666-BA23-990E59EC09BF}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AegisWebsite</RootNamespace>
+    <AssemblyName>AegisWebsite</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.2.1.0\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.2.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyModel.2.1.0\lib\net451\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.ObjectPool.2.2.0\lib\netstandard2.0\Microsoft.Extensions.ObjectPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContactModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="BingSiteAuth.xml" />
+    <Content Include="Contents\animate.css" />
+    <Content Include="Contents\icon\aegis-solutions-icon-32x32.png" />
+    <Content Include="Contents\icon\aegis-solutions-icon-48x48.png" />
+    <Content Include="Contents\icon\apple-touch-icon-32-precomposed.png" />
+    <Content Include="Contents\icon\apple-touch-icon-48-precomposed.png" />
+    <Content Include="Contents\icon\aegis-solutions-icon.ico" />
+    <Content Include="Contents\images\404.png" />
+    <Content Include="Contents\images\about\1.jpg" />
+    <Content Include="Contents\images\about\2.jpg" />
+    <Content Include="Contents\images\about\3.jpg" />
+    <Content Include="Contents\images\aegis_logo.jpg" />
+    <Content Include="Contents\images\aegis_logo.png" />
+    <Content Include="Contents\images\aegis_logo.webp" />
+    <Content Include="Contents\images\blog\1.jpg" />
+    <Content Include="Contents\images\blog\2.jpg" />
+    <Content Include="Contents\images\blog\3.jpg" />
+    <Content Include="Contents\images\blog\4.jpg" />
+    <Content Include="Contents\images\blog\5.jpg" />
+    <Content Include="Contents\images\blog\b1.jpg" />
+    <Content Include="Contents\images\blog\b2.jpg" />
+    <Content Include="Contents\images\blog\b3.jpg" />
+    <Content Include="Contents\images\blog\b4.jpg" />
+    <Content Include="Contents\images\blog\b5.jpg" />
+    <Content Include="Contents\images\blog\b6.jpg" />
+    <Content Include="Contents\images\blog\b7.jpg" />
+    <Content Include="Contents\images\blog\b8.jpg" />
+    <Content Include="Contents\images\canon-certificate-aegis-solutions.jpg" />
+    <Content Include="Contents\images\icon\add%402x.html" />
+    <Content Include="Contents\images\icon\arrow.png" />
+    <Content Include="Contents\images\icon\bg-heading.svg" />
+    <Content Include="Contents\images\icon\caret.png" />
+    <Content Include="Contents\images\icon\pattern.svg" />
+    <Content Include="Contents\images\icon\preloader.gif" />
+    <Content Include="Contents\images\icon\search-icon%402x.html" />
+    <Content Include="Contents\images\icon\sub%402x.html" />
+    <Content Include="Contents\images\Image.png" />
+    <Content Include="Contents\images\img-single\1.jpg" />
+    <Content Include="Contents\images\img-single\2.jpg" />
+    <Content Include="Contents\images\img-single\ch.jpg" />
+    <Content Include="Contents\images\img-single\clients2.jpg" />
+    <Content Include="Contents\images\img-single\faq-1.jpg" />
+    <Content Include="Contents\images\ISO27001-2013-certificate-aegis-solutions.jpg" />
+    <Content Include="Contents\images\ISO9001-2015-certificate-aegis-solutions.jpg" />
+    <Content Include="Contents\images\landing\landing-popup.jpg" />
+    <Content Include="Contents\images\logo.png" />
+    <Content Include="Contents\images\member\1.jpg" />
+    <Content Include="Contents\images\member\2.jpg" />
+    <Content Include="Contents\images\member\3.jpg" />
+    <Content Include="Contents\images\member\4.jpg" />
+    <Content Include="Contents\images\member\5.jpg" />
+    <Content Include="Contents\images\member\6.jpg" />
+    <Content Include="Contents\images\no-image-available.png" />
+    <Content Include="Contents\images\parallax\bg-parallax1.png" />
+    <Content Include="Contents\images\parallax\bg-parallax2.jpg" />
+    <Content Include="Contents\images\parallax\bg-parallax3.jpg" />
+    <Content Include="Contents\images\parallax\bg-parallax4.jpg" />
+    <Content Include="Contents\images\portfolio\1.1.jpg" />
+    <Content Include="Contents\images\portfolio\1.2.jpg" />
+    <Content Include="Contents\images\portfolio\1.3.jpg" />
+    <Content Include="Contents\images\portfolio\1.4.jpg" />
+    <Content Include="Contents\images\portfolio\1.5.jpg" />
+    <Content Include="Contents\images\portfolio\1.6.jpg" />
+    <Content Include="Contents\images\portfolio\1.7.jpg" />
+    <Content Include="Contents\images\portfolio\1.8.jpg" />
+    <Content Include="Contents\images\portfolio\1.9.jpg" />
+    <Content Include="Contents\images\portfolio\1.jpg" />
+    <Content Include="Contents\images\portfolio\2.jpg" />
+    <Content Include="Contents\images\portfolio\3.jpg" />
+    <Content Include="Contents\images\portfolio\4.jpg" />
+    <Content Include="Contents\images\portfolio\5.jpg" />
+    <Content Include="Contents\images\portfolio\6.jpg" />
+    <Content Include="Contents\images\portfolio\7.jpg" />
+    <Content Include="Contents\images\portfolio\8.jpg" />
+    <Content Include="Contents\images\portfolio\9.jpg" />
+    <Content Include="Contents\images\portfolio\p1.jpg" />
+    <Content Include="Contents\images\portfolio\p2.jpg" />
+    <Content Include="Contents\images\portfolio\p3.jpg" />
+    <Content Include="Contents\images\portfolio\p4.jpg" />
+    <Content Include="Contents\images\portfolio\p5.jpg" />
+    <Content Include="Contents\images\portfolio\p6.jpg" />
+    <Content Include="Contents\images\portfolio\p7.jpg" />
+    <Content Include="Contents\images\portfolio\p8.jpg" />
+    <Content Include="Contents\images\portfolio\p9.jpg" />
+    <Content Include="Contents\images\portfolio\pv1.jpg" />
+    <Content Include="Contents\images\portfolio\pv2.jpg" />
+    <Content Include="Contents\images\portfolio\pv3.jpg" />
+    <Content Include="Contents\images\portfolio\pv4.jpg" />
+    <Content Include="Contents\images\portfolio\pv5.jpg" />
+    <Content Include="Contents\images\portfolio\pv6.jpg" />
+    <Content Include="Contents\images\portfolio\pv7.jpg" />
+    <Content Include="Contents\images\portfolio\pv8.jpg" />
+    <Content Include="Contents\images\portfolio\pv9.jpg" />
+    <Content Include="Contents\images\product-type\01.jpg" />
+    <Content Include="Contents\images\product-type\02.jpg" />
+    <Content Include="Contents\images\product-type\03.jpg" />
+    <Content Include="Contents\images\services\1.jpg" />
+    <Content Include="Contents\images\services\2.jpg" />
+    <Content Include="Contents\images\services\3.jpg" />
+    <Content Include="Contents\images\services\4.jpg" />
+    <Content Include="Contents\images\services\5.jpg" />
+    <Content Include="Contents\images\services\6.jpg" />
+    <Content Include="Contents\images\services\s1.jpg" />
+    <Content Include="Contents\images\services\s10.jpg" />
+    <Content Include="Contents\images\services\s11.jpg" />
+    <Content Include="Contents\images\services\s12.jpg" />
+    <Content Include="Contents\images\services\s13.jpg" />
+    <Content Include="Contents\images\services\s14.jpg" />
+    <Content Include="Contents\images\services\s15.jpg" />
+    <Content Include="Contents\images\services\s2.jpg" />
+    <Content Include="Contents\images\services\s3.jpg" />
+    <Content Include="Contents\images\services\s4.jpg" />
+    <Content Include="Contents\images\services\s5.jpg" />
+    <Content Include="Contents\images\services\s6.jpg" />
+    <Content Include="Contents\images\services\s7.jpg" />
+    <Content Include="Contents\images\services\s8.jpg" />
+    <Content Include="Contents\images\services\s9.jpg" />
+    <Content Include="Contents\images\slides\1.webp" />
+    <Content Include="Contents\images\slides\2.webp" />
+    <Content Include="Contents\images\slides\3.webp" />
+    <Content Include="Contents\images\slides\4.webp" />
+    <Content Include="Contents\images\slides\5.webp" />
+    <Content Include="Contents\images\slides\6.webp" />
+    <Content Include="Contents\images\slides\timer.webp" />
+    <Content Include="Contents\images\testimonials\star.png" />
+    <Content Include="Contents\javascript\bootstrap.min.js" />
+    <Content Include="Contents\javascript\gmap3.min.js" />
+    <Content Include="Contents\javascript\imagesloaded.min.js" />
+    <Content Include="Contents\javascript\jquery-countTo.js" />
+    <Content Include="Contents\javascript\jquery-ui.js" />
+    <Content Include="Contents\javascript\jquery-validate.js" />
+    <Content Include="Contents\javascript\jquery-waypoints.js" />
+    <Content Include="Contents\javascript\jquery.cookie.js" />
+    <Content Include="Contents\javascript\jquery.easing.js" />
+    <Content Include="Contents\javascript\jquery.flexslider-min.js" />
+    <Content Include="Contents\javascript\jquery.isotope.min.js" />
+    <Content Include="Contents\javascript\jquery.magnific-popup.min.js" />
+    <Content Include="Contents\javascript\jquery.min.js" />
+    <Content Include="Contents\javascript\jquery.themepunch.revolution.min.js" />
+    <Content Include="Contents\javascript\jquery.themepunch.tools.min.js" />
+    <Content Include="Contents\javascript\main-product.js" />
+    <Content Include="Contents\javascript\main.js" />
+    <Content Include="Contents\javascript\modal-box.min.js" />
+    <Content Include="Contents\javascript\owl.carousel.js" />
+    <Content Include="Contents\javascript\parallax.js" />
+    <Content Include="Contents\javascript\slider.js" />
+    <Content Include="Contents\javascript\switcher.js" />
+    <Content Include="Contents\jquery.wow.min.js" />
+    <Content Include="Contents\layout.css" />
+    <Content Include="Contents\masonry.min.js" />
+    <Content Include="Contents\masonry\imagesloaded.pkgd.min.js" />
+    <Content Include="Contents\masonry\jquery.masonry.pkgd.min.js" />
+    <Content Include="Contents\ProductType\Canon-Copier.jpg" />
+    <Content Include="Contents\ProductType\Canon-DR-Scanner.jpg" />
+    <Content Include="Contents\ProductType\Canon-LFP.jpg" />
+    <Content Include="Contents\simple-lightbox.js" />
+    <Content Include="Contents\simple-lightbox.min.js" />
+    <Content Include="Contents\simplelightbox.css" />
+    <Content Include="Contents\simplelightbox.min.css" />
+    <Content Include="Contents\stylesheets\animate.css" />
+    <Content Include="Contents\stylesheets\bootstrap.css" />
+    <Content Include="Contents\stylesheets\flexslider.css" />
+    <Content Include="Contents\stylesheets\font-awesome.css" />
+    <Content Include="Contents\stylesheets\fonts\flexslider-icon-2.html" />
+    <Content Include="Contents\stylesheets\fonts\flexslider-icon-3.html" />
+    <Content Include="Contents\stylesheets\fonts\flexslider-icon.html" />
+    <Content Include="Contents\stylesheets\fonts\flexslider-icond41d.html" />
+    <Content Include="Contents\stylesheets\magnific-popup.css" />
+    <Content Include="Contents\stylesheets\mobile-menu.css" />
+    <Content Include="Contents\stylesheets\modal-box.min.css" />
+    <Content Include="Contents\stylesheets\owl.carousel.css" />
+    <Content Include="Contents\stylesheets\owl.video.play.html" />
+    <Content Include="Contents\stylesheets\reset.css" />
+    <Content Include="Contents\stylesheets\responsive-product.css" />
+    <Content Include="Contents\stylesheets\responsive.css" />
+    <Content Include="Contents\stylesheets\revolution-slider.css" />
+    <Content Include="Contents\stylesheets\shortcodes.css" />
+    <Content Include="Contents\stylesheets\simple-line-icons.css" />
+    <Content Include="Contents\stylesheets\style.css" />
+    <Content Include="Contents\stylesheets\themes.min.css" />
+    <Content Include="Contents\wow.min.js" />
+    <Content Include="Global.asax" />
+    <Content Include="ror.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="sitemap.html" />
+    <Content Include="sitemap.xml" />
+    <Content Include="urllist.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Contents\images\products\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_HeaderLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_FooterLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\fonts\fontawesome-webfont5b62.eot" />
+    <Content Include="Contents\fonts\fontawesome-webfont5b62.svg" />
+    <Content Include="Contents\fonts\fontawesome-webfont5b62.ttf" />
+    <Content Include="Contents\fonts\fontawesome-webfont5b62.woff" />
+    <Content Include="Contents\fonts\fontawesome-webfont5b62.woff2" />
+    <Content Include="Contents\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Contents\fonts\Simple-Line-Icons06c8.eot" />
+    <Content Include="Contents\fonts\Simple-Line-Icons06c8.svg" />
+    <Content Include="Contents\fonts\Simple-Line-Icons06c8.ttf" />
+    <Content Include="Contents\fonts\Simple-Line-Icons06c8.woff" />
+    <Content Include="Contents\fonts\Simple-Line-Icons06c8.woff2" />
+    <Content Include="Contents\stylesheets\fonts\flexslider-icon.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\images\client\ck_birla.webp" />
+    <Content Include="Contents\images\client\india_power.webp" />
+    <Content Include="Contents\images\client\SAIL_logo.webp" />
+    <Content Include="Contents\images\client\wbhusc.webp" />
+    <Content Include="Contents\images\imagebox\1.webp" />
+    <Content Include="Contents\images\imagebox\2.webp" />
+    <Content Include="Contents\images\imagebox\3.webp" />
+    <Content Include="Contents\images\imagebox\client.webp" />
+    <Content Include="Contents\simplelightbox.scss" />
+    <None Include="Properties\PublishProfiles\Aegis Website.pubxml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\DMS.cshtml" />
+    <Content Include="Views\Home\ScanningDigitization.cshtml" />
+    <Content Include="Views\Home\MPS.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="sitemap.xml.gz" />
+    <Content Include="Views\Home\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\ProductList.cshtml" />
+    <Content Include="Views\Product\ProductCategoryList.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Home\Certificates.cshtml" />
+    <Content Include="Views\Home\Service.cshtml" />
+    <Content Include="Views\Home\ProductType.cshtml" />
+    <Content Include="Views\Product\ProductSuggestion.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aegis.DataAccess\Aegis.DataAccess.csproj">
+      <Project>{63336ecf-59d0-4d6d-97f7-9fd59784b381}</Project>
+      <Name>Aegis.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aegis.Model\Aegis.Model.csproj">
+      <Project>{c3299bd9-1497-41fb-bf4a-33cb37c8ac40}</Project>
+      <Name>Aegis.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1689/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

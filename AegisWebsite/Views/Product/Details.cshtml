@@ -1,0 +1,69 @@
+﻿@model Aegis.Model.Product
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="border-width: 0px; margin: 10% 0px 0px;">
+    <section class="listings">
+        <div class="wrapper">
+            <div class="card">
+
+                <div class="product-wrapper row">
+                    <div class="preview col-md-6">
+
+                        <div class="preview-pic tab-content">
+                            @foreach (Aegis.Model.ProductDisplay photoDisplay in Model.ProductDisplays)
+                            {
+                                if (Model.ProductDisplays.FirstOrDefault() == photoDisplay)
+                                {
+                                    <div class="tab-pane active" id="@photoDisplay.Id"><img src='@photoDisplay.ContentPath' /></div>
+                                }
+                                else
+                                {
+                                    <div class="tab-pane" id="@photoDisplay.Id"><img src='@photoDisplay.ContentPath' /></div>
+                                }
+                            }
+                        </div>
+                        <ul class="preview-thumbnail nav-tabs">
+                            @foreach (Aegis.Model.ProductDisplay photoDisplay in Model.ProductDisplays)
+                            {
+                                if (Model.ProductDisplays.FirstOrDefault() == photoDisplay)
+                                {
+                                    <li><a data-target="#@photoDisplay.Id" data-toggle="tab" onclick="changeSelection(this)"><img src='@photoDisplay.ContentPath' class="active-image" /></a></li>
+                                }
+                                else
+                                {
+                                    <li><a data-target="#@photoDisplay.Id" data-toggle="tab" onclick="changeSelection(this)"><img src='@photoDisplay.ContentPath' class="inactive-image" /></a></li>
+                                }
+                            }
+                        </ul>
+
+                    </div>
+                    <div class="details col-md-6">
+                        @foreach (Aegis.Model.ProductFeature productFeature in Model.ProductFeatures)
+                        {
+                            <div class="text-nowrap">
+                                <span class="fa fa-angle-double-right" style="font-weight:bold"> @productFeature.Name</span> ::
+                                <span>@productFeature.Description</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+    function changeSelection(obj) {
+        debugger;
+        var viewsIndex = $('.active-image').toArray()
+        for (i = 0; i < viewsIndex.length; i++) {
+            viewsIndex[i].className = 'inactive-image';
+        }
+        obj.children[0].className = 'active-image';
+    }
+</script>
+<br />

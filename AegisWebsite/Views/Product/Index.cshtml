@@ -1,0 +1,12 @@
+﻿@model Aegis.Model.Product
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="listings">
+    <div class="wrapper">
+        @{Html.RenderAction("ProductCategoryList", new { id = Model });}
+        @{Html.RenderAction("ProductList", new { id = Model });}
+    </div>
+</section>	<!--  end listing section  -->
